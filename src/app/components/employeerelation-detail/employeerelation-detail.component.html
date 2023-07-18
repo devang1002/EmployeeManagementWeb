@@ -1,0 +1,19 @@
+<div mat-dialog-title>
+    <h4>Employee Relation</h4>
+</div>
+<form [formGroup]="employeerelationForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content class="content">
+                
+        <div class="row1">
+          <mat-form-field appearance="outline">
+              <mat-label>Relation:</mat-label>
+              <input matInput type="text" placeholder="Enter Relation" formControlName="relation" >
+            </mat-form-field>
+            </div>
+    </div> 
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}} </button> 
+        <!-- <button mat-raised-button color="primary" [disabled]="!employeeForm.valid">{{data ? 'Update' : 'Save'}}</button> -->
+    </div>
+</form>

@@ -1,0 +1,98 @@
+<div mat-dialog-title>
+    <h4>Employee</h4>
+</div>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row1">
+                <mat-form-field appearance="outline">
+                    <mat-label>FirstName:</mat-label>
+                    <input matInput type="text" placeholder="Enter FirstName" formControlName="firstName" > 
+                  </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>MiddleName:</mat-label>
+                    <input matInput type="text" placeholder="Enter MiddleName" formControlName="middleName" >
+                  </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>LastName:</mat-label>
+                    <input matInput type="text" placeholder="Enter LastName" formControlName="lastName" >
+                  </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>EmpCode:</mat-label>
+                    <input matInput type="text" placeholder="Enter EmpCode" formControlName="empCode" >
+                  </mat-form-field>
+
+                </div>
+        <div class="row1">
+            <mat-form-field appearance="outline">
+                <mat-label>Email:</mat-label>
+                <input matInput type="text" placeholder="Enter Email" formControlName="email" >
+              </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Mobile:</mat-label>
+                <input matInput type="text" placeholder="Enter Mobile" formControlName="mobile" >
+              </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Gender:</mat-label>
+                <input matInput type="text" placeholder="Enter Gender" formControlName="gender" >
+              </mat-form-field>
+
+        </div>
+        <div class="row1">
+          <mat-form-field appearance="outline">
+              <mat-label>Phone:</mat-label>
+              <input matInput type="text" placeholder="Enter Phone" formControlName="phone" >
+            </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>Designation:</mat-label>
+              <input matInput type="text" placeholder="Enter Designation" formControlName="designation" >
+            </mat-form-field>
+         
+      </div>
+        <div class="row1">
+    
+          <mat-form-field appearance="outline">
+            <mat-label>DOB:</mat-label>
+            <input matInput [matDatepicker]="picker1" placeholder="dob" formControlName="dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <!-- <mat-error *ngIf="hasError('startDate', 'required')">Choose start date</mat-error> -->
+          </mat-form-field>
+    
+    
+          <mat-form-field appearance="outline">
+            <mat-label>DOJ:</mat-label>
+            <input matInput [matDatepicker]="picker2" placeholder="dob" formControlName="doj">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <!-- <mat-error *ngIf="hasError('startDate', 'required')">Choose start date</mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>EmergencyContectNo:</mat-label>
+              <input matInput type="text" placeholder="Enter EmergencyContectNo" formControlName="emergencyContectNo" >
+            </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>EmergencyContectName:</mat-label>
+              <input matInput type="text" placeholder="Enter EmergencyContectName" formControlName="emergencyContectName" >
+            </mat-form-field>
+
+          </div>
+
+       
+        
+    </div> 
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}} </button> 
+        <!-- <button mat-raised-button color="primary" [disabled]="!employeeForm.valid">{{data ? 'Update' : 'Save'}}</button> -->
+    </div>
+</form>
