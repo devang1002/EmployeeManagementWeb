@@ -63,9 +63,7 @@ export class EmployeeRelationDetailComponent implements OnInit {
     })
   }
 
-  // public hasError = (controlName: string, errorName: string) =>{
-  //   return this.employeeForm.controls[controlName].hasError(errorName);
-  // }
+ 
 
 
   onSubmit() {

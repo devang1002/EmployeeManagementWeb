@@ -15,6 +15,10 @@ import { EmployeeRelationListComponent } from './components/employeerelation-lis
 const routes: Routes = [
 
   {
+    path: '',
+    component: EmployeeListComponent
+  },
+  {
     path: 'employee-details',
     component: EmployeeDetailsComponent
   },
