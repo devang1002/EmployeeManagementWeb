@@ -70,7 +70,7 @@ export class EmployeeaddressListComponent {
     }
 
     deleteemployeeaddress(id:string,employeeaddress:any){
-      if(confirm('Are you sure to delete'))
+      if(confirm('Are you sure to delete Address of ' + employeeaddress.employeeName+ ' ?'))
       this.apiService.deleteEmployeeaddress(id)
       .subscribe({
         next:(response)=>{

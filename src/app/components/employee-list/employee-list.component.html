@@ -12,11 +12,6 @@
     <div class="table-container">
       <table mat-table [dataSource]="dataSource" matSort>
     
-        <!-- ID Column -->
-        <!-- <ng-container matColumnDef="srno">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sr. No. </th>
-          <td mat-cell *matCellDef="let user"> {{user.id}} </td>
-        </ng-container> -->
         <ng-container matColumnDef="empCode">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> EmpCode </th>
           <td mat-cell *matCellDef="let employee"> {{employee.empCode}} </td>

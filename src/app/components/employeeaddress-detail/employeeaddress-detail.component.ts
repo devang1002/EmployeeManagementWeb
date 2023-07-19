@@ -50,9 +50,7 @@ export class EmployeeaddressDetailComponent implements OnInit {
     private router:Router,
     private route: ActivatedRoute,
     private dialogRef: MatDialogRef<EmployeeaddressDetailComponent>,
-   //  private toaster:ToastrService,
    @Inject(MAT_DIALOG_DATA) public data: any){}
-   //public companyForm:FormGroup;
   
  
  
@@ -78,7 +76,7 @@ export class EmployeeaddressDetailComponent implements OnInit {
         this.apiService.updateEmployeeaddress(this.data.id, this.employeeaddressForm.value)
           .subscribe({
             next: (result) => {
-              // alert("user Updated")
+              alert("employeeaddress Updated")
               this.dialogRef.close(true) 
             }
           })

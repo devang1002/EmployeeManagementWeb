@@ -71,13 +71,13 @@ export class EmployeeListComponent {
         this.dataSource=new MatTableDataSource(result);
         this.dataSource.sort=this.sort;
         this.dataSource.paginator=this.paginator;
-        // this.Userform=result
+       
       }
     })
   }
 
   deleteemployee(id:string,employee:any){
-    if(confirm('Are you sure to delete'))
+    if(confirm('Are you sure to delete ' + employee.firstName +' ?'))
     this.apiService.deleteEmployee(id)
     .subscribe({
       next:(response)=>{
@@ -86,7 +86,7 @@ export class EmployeeListComponent {
     });
   }
   openemployee(){
-    // debugger
+   
     const dialogRef = this.dialog.open(EmployeeDetailsComponent);
     dialogRef.afterClosed().subscribe({
       next:(val) => {

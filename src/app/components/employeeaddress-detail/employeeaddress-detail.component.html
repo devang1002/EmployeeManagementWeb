@@ -9,7 +9,7 @@
                 <input matInput type="text" placeholder="Enter Address " formControlName="address">
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <mat-select formControlName="employeeId" placeholder="Select Owner">
+                <mat-select formControlName="employeeId" placeholder="Select Employee">
                   <mat-option value="{{employee.id}}" *ngFor="let employee of employee">
                     {{employee.firstName}}
                   </mat-option>
@@ -36,7 +36,7 @@
                 <input matInput type="text" placeholder="Enter Pincode " formControlName="pincode">
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <mat-select formControlName="addressTypeId" placeholder="Select Owner">
+                <mat-select formControlName="addressTypeId" placeholder="Select AddressType">
                   <mat-option value="{{addressType.id}}" *ngFor="let addressType of addressType">
                     {{addressType.addressTypes}}
                   </mat-option>
@@ -47,6 +47,5 @@
     <div mat-dialog-actions class="action">
         <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
         <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}} </button> 
-        <!-- <button mat-raised-button color="primary" [disabled]="!employeeForm.valid">{{data ? 'Update' : 'Save'}}</button> -->
     </div>
 </form>

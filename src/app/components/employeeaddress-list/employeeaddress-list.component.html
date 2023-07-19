@@ -1,22 +1,17 @@
 <mat-toolbar color="primary">
     <span>Employee Address</span>
     <span class="space"></span>
-    <button mat-raised-button (click)="openemployeeaddress()">Add Employee</button>
+    <button mat-raised-button (click)="openemployeeaddress()">Add EmployeeAddress</button>
   </mat-toolbar>
   <div class="main-body">
     <mat-form-field>
       <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Devang" #input>
     </mat-form-field>
     
     <div class="table-container">
       <table mat-table [dataSource]="dataSource" matSort>
     
-        <!-- ID Column -->
-        <!-- <ng-container matColumnDef="srno">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Sr. No. </th>
-          <td mat-cell *matCellDef="let user"> {{user.id}} </td>
-        </ng-container> -->
         <ng-container matColumnDef="address">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
           <td mat-cell *matCellDef="let employeeaddress"> {{employeeaddress.address}} </td>
@@ -68,7 +63,7 @@
         </tr>
       </table>
     
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of Employee"></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of EmployeeAddress"></mat-paginator>
     </div>
   </div>
     

@@ -12,7 +12,6 @@ import { ApiService } from 'src/app/services/api.service';
 import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ReactiveFormsModule } from "@angular/forms";
-// import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -52,9 +51,8 @@ export class EmployeeFamilyDetailDetailComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private dialogRef: MatDialogRef<EmployeeFamilyDetailDetailComponent>,
-    //  private toaster:ToastrService,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
-  //public employeefamilydetailForm:FormGroup;
+  
 
 
 
@@ -76,9 +74,6 @@ export class EmployeeFamilyDetailDetailComponent implements OnInit {
         })
   }
 
-  // public hasError = (controlName: string, errorName: string) =>{
-  //   return this.employeeForm.controls[controlName].hasError(errorName);
-  // }
 
 
   onSubmit() {
@@ -87,7 +82,7 @@ export class EmployeeFamilyDetailDetailComponent implements OnInit {
       this.apiService.updateEmployeeFamilyDetail(this.data.id, this.employeefamilydetailForm.value)
         .subscribe({
           next: (result) => {
-            alert("user Updated")
+            alert("employeefamilydetail Updated")
             this.dialogRef.close(true)
           }
         })
@@ -97,7 +92,7 @@ export class EmployeeFamilyDetailDetailComponent implements OnInit {
       this.apiService.addEmployeeFamilyDetail(this.employeefamilydetailForm.value)
         .subscribe({
           next: (result) => {
-            alert("user Added Successfully")
+            alert("employeefamilydetail Added Successfully")
             this.dialogRef.close(true)
           }
         })

@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import {MatIconModule  } from "@angular/material/icon";
 import {  RouterModule } from '@angular/router';
-
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { EmployeeFamilyDetailDetailComponent } from '../employeefamilydetail-detail/employeefamilydetail-detail.component';
 
@@ -48,7 +47,6 @@ export class EmployeeFamilyDetailListComponent {
 
 
  constructor(public apiService:ApiService,
- // public loaderservive:LoaderService,
   private _dialog:MatDialogModule,
   private dialog:MatDialog) {
    const Users=Array.from({length:100},)
@@ -74,13 +72,12 @@ export class EmployeeFamilyDetailListComponent {
         this.dataSource=new MatTableDataSource(result);
         this.dataSource.sort=this.sort;
         this.dataSource.paginator=this.paginator;
-        // this.Userform=result
       }
     })
   }
 
   deleteemployeefamilydetail(id:string,employeefamilydetail:any){
-    if(confirm('Are you sure to delete'))
+    if(confirm('Are you sure you want to delete details of ' + employeefamilydetail.employeeName + ' ' + employeefamilydetail.relationName + ' ?'))
     this.apiService.deleteEmployeeFamilyDetail(id)
     .subscribe({
       next:(response)=>{
@@ -89,7 +86,6 @@ export class EmployeeFamilyDetailListComponent {
     });
   }
   openemployeefamilydetail(){
-    // debugger
     const dialogRef = this.dialog.open(EmployeeFamilyDetailDetailComponent);
     dialogRef.afterClosed().subscribe({
       next:(val) => {
